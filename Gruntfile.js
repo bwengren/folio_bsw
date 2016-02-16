@@ -8,11 +8,19 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          outputStyle: 'compressed',
+          outputStyle: 'expanded',
           sourceMap: true,
         },
         files: {
           'css/app.css': 'scss/app.scss'
+        }
+      }
+    },
+
+    uncss: {
+      dist: {
+        files: {
+          'css/app.css': ['index.html', 'poc.html']
         }
       }
     },
@@ -34,6 +42,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-uncss');
 
   grunt.registerTask('build', ['sass']);
   grunt.registerTask('default', ['build','watch']);

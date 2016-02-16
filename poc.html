@@ -1,0 +1,707 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrySpark - Proof of Concept by Bryan Wengren</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/modernizr.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Main navigation -->
+    <div class="fixed">
+      <nav class="top-bar" data-topbar>
+
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="index.html">
+                <span class="title">BrySpark&reg;</span>
+                <small>v1.0.0</small>&nbsp;&nbsp;
+                <span class="white">Proof of Concept</span>
+              </a>
+            </h1>
+          </li>
+        </ul>
+
+        <!-- Right Nav -->
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li>
+              <a href="index.html" title="Go to the Project's Home page.">
+                <span class="icon-ellipsis-h"></span>All Apps
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="javascript:;"  data-reveal-id="user_settings">
+                <span class="icon-cogs"></span>John Smith
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="javascript:;">
+                <span class="icon-power-off"></span>Logout
+              </a>
+            </li>
+          </ul>
+        </section><!-- .top-bar-section -->
+
+        <!-- Left Nav -->
+        <section class="top-bar-section">
+          <ul class="left">
+            <li class="active"><a href="javascript:;">App Opt1</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:;">App Opt2</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:;">App Opt3</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:;" title="Export the current view." data-reveal-id="export_main">
+              <span class="icon-download"></span>Export</a>
+            </li>
+            <li class="divider"></li>
+            <li><a id="clone_main" href="poc.html" target="_blank" title="Open a copy of this app in a new window or tab.">
+              <span class="icon-clone"></span>Copy</a>
+            </li>
+          </ul>
+        </section><!-- .top-bar-section -->
+
+      </nav>
+
+    </div><!-- .fixed -->
+
+    <!-- Main navigation modals here +++++++++++++++++++++++++++++ -->
+    <!-- User Settings -->
+    <div id="user_settings" class="reveal-modal small" data-reveal aria-labelledby="User Settings" aria-hidden="true" role="dialog">
+      <h3 id="modalTitle">Account Settings</h3>
+      <p>Update the account setting for John Smith</p>
+      <hr/>
+
+      <form>
+
+        <div class="row clearfix current_password">
+          <div class="small-3 columns">
+            <label for="current_pass" class="inline">Current Password</label>
+          </div>
+          <div class="small-9 columns">
+            <!-- Lets do the posfix here -->
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input id="current_pass" type="password" value="ABCD123456">
+              </div>
+              <div class="small-2 columns">
+                <a id="toggle_current_pass" ref="javascript:;" class="button secondary postfix">Show</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- .current_passwprd -->
+
+        <div class="row clearfix new_password">
+          <div class="small-3 columns">
+            <label for="new_pass" class="inline">New Password</label>
+          </div>
+          <div class="small-9 columns">
+            <!-- Lets do the posfix here -->
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input id="new_pass" type="text" value="">
+              </div>
+              <div class="small-2 columns">
+                <a id="toggle_new_pass" href="javascript:;" class="button secondary postfix">Hide</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- .new_password -->
+
+        <!-- Password rules -->
+        <div class="row clearfix password_rules">
+          <div class="small-9 columns small-offset-3">
+            <ul class="no-bullet">
+              <li>
+                <span id="field_not_blank" class="icon-checkmark success-icon"></span>
+                <small>Leave blank to keep your current password</small>
+              </li>
+              <li>
+                <span id="field_length" class="icon-checkmark2 idle-icon"></span>
+                <small>Must be at least 6 characters long</small>
+              </li>
+              <li>
+                <span id="field_has_num" class="icon-checkmark2 idle-icon"></span>
+                <small>Must contain at least one number</small>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- .password_rules -->
+
+        <!-- Locale -->
+        <div class="row clearfix locale">
+          <div class="small-3 columns">
+            <label for="locale" class="inline">Locale</label>
+          </div>
+          <div class="small-9 columns">
+            <select id="locale">
+              <option value="en-US">en-US</option>
+              <option value="en">en</option>
+              <option value="ja">ja</option>
+            </select>
+          </div>
+        </div>
+
+        <hr/>
+        <div class="text-center account-modal">
+          <a href="javascript:;" class="button small secondary">Cancel</a>
+          <a href="javascript:;" class="button small success ">Update</a>
+        </div>
+
+      </form>
+
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div><!-- #user-settings -->
+    <!-- Export Modal -->
+    <div id="export_main" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      <h3 id="modalTitle">Export</h3>
+      <hr/>
+      <p>
+        <input type="text" value="someRandomReportName.extension">
+      </p>
+      <div class="row clearfix">
+       <div class="small-12">
+          <input type="radio" id="rb1" name="rb" value="">
+          <label for="rb1">CSV</label><br>
+          <input type="radio" id="rb2" name="rb"value="">
+          <label for="rb2">EXCEL</label><br>
+          <input type="radio" id="rb3" name="rb" value="">
+          <label for="rb3">HTML</label><br/>
+          <input type="radio" id="rb4" name="rb" value="">
+          <label for="rb4">JSON</label><br>
+          <input type="radio" id="rb5" name="rb"value="" checked>
+          <label for="rb5">PDF</label><br>
+          <input type="radio" id="rb6" name="rb" value="">
+          <label for="rb6">PNG</label>
+          <select>
+            <option>- Select a format -</option>
+            <option>Best Fit</option>
+            <option>US Letter (Portrait)</option>
+            <option>US Letter (Landscape)</option>
+            <option>A4 (Portrait)</option>
+            <option>A4 (Landscape)</option>
+          </select>
+        <hr/>
+        <div class="text-center">
+          <a href="javascript:;" id="export_main_btn" class="button small success">Export</a>
+        </div>
+       </div>
+      </div>
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div><!-- #export_main -->
+
+    <!-- Page Title -->
+    <div class="full-width clearfix">
+      <h5 class="text-center vertical-space">
+      <span class="normal-weight">Daily Average • Elec (kW) • Normalize by Area, Degree-Day •</span>
+        No Baseline • <span class="normal-weight">All Days</span>
+      </h5>
+    </div><!-- .full-width -->
+
+    <!-- Input field for query -->
+    <div class="full-width vertical-space clearfix">
+      <div class="row collapse">
+        <div class="postfix-radius">
+          <div class="small-11 columns">
+            <label>
+              <input type="text" id="query" placeholder=">_ Enter custom query parameters to filter the results ">
+            </label>
+          </div>
+          <div class="small-1 columns">
+              <a href="javascript:;" class="postfix button success">Run Query</a>
+          </div>
+        </div>
+      </div><!-- .row collapse -->
+    </div><!-- .full-width -->
+
+    <!-- Output the report -->
+    <div id="output_0" class="full-width vertical-space clearfix">
+
+      <nav class="top-bar" data-topbar>
+
+        <ul class="title-area">
+          <li class="name">
+            <h3>
+                <span class="title"><span class="icon-terminal">&nbsp;</span> Some query parameter or data set here</span>
+            </h3>
+          </li>
+        </ul>
+
+        <!-- Right Nav -->
+        <section class="top-bar-section">
+          <ul class="right">
+            <li>
+              <a href="javascript:;" id="chart_toggle_btn_0" class="active">
+                <span class="icon-stats-dots"></span>Chart
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" id="table_toggle_btn_0">
+                <span class="icon-table"></span>Table
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" data-reveal-id="export_output_0"><span class="icon-download"></span>Export</a>
+            </li>
+            <li>
+              <a href="javascript:;" id="hide_output_0">
+                <span class="icon-angle-up"></span>Hide
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" id="show_output_0" style="display:none">
+                <span class="icon-angle-down"></span>Show
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" data-reveal-id="confirm_close_0" class="close">
+                <span class="icon-close"></span>Close
+              </a>
+            </li>
+          </ul>
+        </section>
+
+      </nav>
+
+      <!-- Actual report data -->
+      <div id="report_data_0">
+
+        <div class="text-center" id="chart_0">
+          <img src="img/bar_chart_3.png"/>
+        </div>
+
+        <div id="table_0" style="display:none">
+          <div class="clearfix">
+            <table role="grid">
+              <thead>
+                <tr>
+                  <th>Site</th>
+                  <th>Dec 2016</th>
+                  <th>Nov 2016</th>
+                  <th>Oct 2016</th>
+                  <th>Sep 2016</th>
+                  <th>Aug 2016</th>
+                  <th>Jul 2016</th>
+                  <th>Jun 2016</th>
+                  <th>May 2016</th>
+                  <th>Apr 2016</th>
+                  <th>Mar 2016</th>
+                  <th>Feb 2016</th>
+                  <th>Jan 2016</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lake Anna</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                </tr>
+                <tr>
+                  <td>Richmond</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                </tr>
+                <tr>
+                  <td>Chicago</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                </tr>
+                <tr>
+                  <td>McLean</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                </tr>
+                <tr>
+                  <td>Denver</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div><!-- .full-width -->
+        </div><!--  #table_0 -->
+      </div><!-- #report_data -->
+
+
+      <!-- Various modals four output_0 ######################################## -->
+
+      <!-- Confirm closing the report -->
+      <div id="confirm_close_0" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <h3 id="modalTitle">Are you sure?</h3>
+        <hr/>
+        <p>If you close this report, it will no longer be available on this page. To view the report again, simply rerun the query in the form field provided.</p>
+        <hr/>
+        <div class="text-center">
+          <a href="javascript:;" id="cancel_destroy_0" class="button small secondary">Cancel</a>
+          <a href="javascript:;" id="confirm_destroy_0" class="button small alert ">Close it</a>
+        </div>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+      </div><!-- #confirm_close_0 -->
+
+      <!-- Export Modal -->
+      <div id="export_output_0" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <h3 id="modalTitle">Export</h3>
+        <hr/>
+        <p>
+          <input type="text" value="someRandomReportName.extension">
+        </p>
+        <div class="row clearfix">
+         <div class="small-12">
+            <input type="radio" id="rb1" name="rb" value="">
+            <label for="rb1">CSV</label><br>
+            <input type="radio" id="rb2" name="rb"value="">
+            <label for="rb2">EXCEL</label><br>
+            <input type="radio" id="rb3" name="rb" value="">
+            <label for="rb3">HTML</label><br/>
+            <input type="radio" id="rb4" name="rb" value="">
+            <label for="rb4">JSON</label><br>
+            <input type="radio" id="rb5" name="rb"value="" checked>
+            <label for="rb5">PDF</label><br>
+            <input type="radio" id="rb6" name="rb" value="">
+            <label for="rb6">PNG</label>
+            <select>
+              <option>- Select a format -</option>
+              <option>Best Fit</option>
+              <option>US Letter (Portrait)</option>
+              <option>US Letter (Landscape)</option>
+              <option>A4 (Portrait)</option>
+              <option>A4 (Landscape)</option>
+            </select>
+          <hr/>
+          <div class="text-center">
+            <a href="javascript:;" id="export_action_0" class="button small success">Export</a>
+          </div>
+         </div>
+        </div>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+      </div><!-- #confirm_close_0 -->
+
+    </div><!-- #output_0 -->
+
+    <!-- Output the report -->
+    <div id="output_1" class="full-width vertical-space clearfix" style="padding-bottom:70px"> <!-- @TODO fix this later -->
+
+      <nav class="top-bar" data-topbar>
+
+        <ul class="title-area">
+          <li class="name">
+            <h3>
+                <span class="title"><span class="icon-terminal">&nbsp;</span>Some query parameter or data set here</span>
+            </h3>
+          </li>
+        </ul>
+
+        <!-- Right Nav -->
+        <section class="top-bar-section">
+          <ul class="right">
+            <li>
+              <a href="javascript:;" id="chart_toggle_btn_1" class="active">
+                <span class="icon-stats-dots"></span>Chart
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" id="table_toggle_btn_1">
+                <span class="icon-table"></span>Table
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" data-reveal-id="export_output_1"><span class="icon-download"></span>Export</a>
+            </li>
+            <li>
+              <a href="javascript:;" id="hide_output_1">
+                <span class="icon-angle-up"></span>Hide
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" id="show_output_1" style="display:none">
+                <span class="icon-angle-down"></span>Show
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" data-reveal-id="confirm_close_1" class="close">
+                <span class="icon-close"></span>Close
+              </a>
+            </li>
+          </ul>
+        </section>
+
+      </nav>
+
+      <!-- Actual report data -->
+      <div id="report_data_1">
+
+        <div class="text-center" id="chart_1">
+          <img src="img/bar_chart_2.png"/>
+        </div>
+
+        <div id="table_1" style="display:none">
+          <div class="clearfix">
+            <table role="grid">
+              <thead>
+                <tr>
+                  <th>Site</th>
+                  <th>Dec 2016</th>
+                  <th>Nov 2016</th>
+                  <th>Oct 2016</th>
+                  <th>Sep 2016</th>
+                  <th>Aug 2016</th>
+                  <th>Jul 2016</th>
+                  <th>Jun 2016</th>
+                  <th>May 2016</th>
+                  <th>Apr 2016</th>
+                  <th>Mar 2016</th>
+                  <th>Feb 2016</th>
+                  <th>Jan 2016</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lake Anna</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                  <td>456.5 KW</td>
+                </tr>
+                <tr>
+                  <td>Richmond</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                  <td>653.7 KW</td>
+                </tr>
+                <tr>
+                  <td>Chicago</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                  <td>945.2 KW</td>
+                </tr>
+                <tr>
+                  <td>McLean</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                  <td>258.9 KW</td>
+                </tr>
+                <tr>
+                  <td>Denver</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                  <td>426.7 KW</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div><!-- .full-width -->
+        </div><!--  #table_1 -->
+      </div><!-- #report_data_1-->
+
+
+      <!-- Various modals ######################################## -->
+
+      <!-- Confirm closing the report -->
+      <div id="confirm_close_1" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <h3 id="modalTitle">Are you sure?</h3>
+        <hr/>
+        <p>If you close this report, it will no longer be available on this page. To view the report again, simply rerun the query in the form field provided.</p>
+        <hr/>
+        <div class="text-center">
+          <a href="javascript:;" id="cancel_destroy_0" class="button small secondary">Cancel</a>
+          <a href="javascript:;" id="confirm_destroy_0" class="button small alert ">Close it</a>
+        </div>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+      </div><!-- #confirm_close_1 -->
+
+      <!-- Export Modal -->
+      <div id="export_output_1" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <h3 id="modalTitle">Export</h3>
+        <hr/>
+        <p>
+          <input type="text" value="someRandomReportName.extension">
+        </p>
+        <div class="row clearfix">
+         <div class="small-12">
+            <input type="radio" id="rb1" name="rb" value="">
+            <label for="rb1">CSV</label><br>
+            <input type="radio" id="rb2" name="rb"value="">
+            <label for="rb2">EXCEL</label><br>
+            <input type="radio" id="rb3" name="rb" value="">
+            <label for="rb3">HTML</label><br/>
+            <input type="radio" id="rb4" name="rb" value="">
+            <label for="rb4">JSON</label><br>
+            <input type="radio" id="rb5" name="rb"value="" checked>
+            <label for="rb5">PDF</label><br>
+            <input type="radio" id="rb6" name="rb" value="">
+            <label for="rb6">PNG</label>
+            <select>
+              <option>- Select a format -</option>
+              <option>Best Fit</option>
+              <option>US Letter (Portrait)</option>
+              <option>US Letter (Landscape)</option>
+              <option>A4 (Portrait)</option>
+              <option>A4 (Landscape)</option>
+            </select>
+          <hr/>
+          <div class="text-center">
+            <a href="javascript:;" id="export_action_1" class="button small success">Export</a>
+          </div>
+         </div>
+        </div>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+      </div><!-- #confirm_close_1 -->
+
+    </div><!-- #output_1 -->
+
+<!-- CLEAN ^ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <footer class="sticky-footer clearfix">
+      <div class="row full-width collapse">
+        <div class="small-1 columns"><small>Available Apps</small></div>
+        <div class="small-10 columns">
+          <ul class="inline-list">
+            <li><a href=""><span class="icon-flash"></span></a></li>
+            <li><span class="icon-cord"></span></li>
+            <li><span class="icon-hourglass"></span></li>
+            <li><span class="icon-tasks"></span></li>
+            <li><span class="icon-pencil"></span></li>
+
+            <li><span class="icon-file-text2"></span></li>
+            <li><span class="icon-meter"></span></li>
+            <li><span class="icon-sun"></span></li>
+            <li><span class="icon-cogs"></span></li>
+            <li><span class="icon-search-plus"></span></li>
+
+            <li><span class=" database"></span></li>
+            <li><span class="icon-stats-dots"></span></li>
+            <li><span class="icon-radio"></span></li>
+            <li><span class="icon-new-tab"></span></li>
+            <li><span class="icon-download"></span></li>
+
+            <li><span class=" icon-info-circle"></span></li>
+            <li><span class="icon-radio-checked2"></span></li>
+            <li><span class="icon-minus2"></span></li>
+            <li><span class="icon-download"></span></li>
+            <li><span class="icon-table"></span></li>
+          </ul>
+        </div>
+        <div class="small-1 columns text-right">
+          <span class="icon-angle-down disabled"></span>
+          <a id="top" href="javascript:;"><span class="icon-angle-double-up"></span></a>
+        </div>
+      </div>
+
+    </footer>
+
+<!-- JS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="js/fnd/foundation.min.js"></script>
+    <script src="js/fnd/foundation.reveal.js"></script>
+    <script src="js/app.js"></script>
+
+  </body>
+
+</html>

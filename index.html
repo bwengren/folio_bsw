@@ -3,169 +3,546 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation</title>
+    <title>BrySpark - Style Guide by Bryan Wengren</title>
     <link rel="stylesheet" href="css/app.css" />
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="js/modernizr.js"></script>
   </head>
+
   <body>
-    <div class="row">
-      <div class="large-12 columns">
-        <h1>Welcome to Foundation</h1>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="panel">
-          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
-            </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses offer you a chance to better understand how Foundation works and how you can master it to create awesome projects.</p>
-            </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to ask a question or show off your knowlege.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 medium-push-2 columns">
-              <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
-            </div>
-            <div class="large-4 medium-4 medium-pull-2 columns">
-              <p><a href="https://twitter.com/ZURBfoundation">@zurbfoundation</a><br />Ping us on Twitter if you have questions. When you build something with this we'd love to see it (and send you a totally boss sticker).</p>
-            </div>        
-          </div>
-        </div>
-      </div>
+    <div class="fixed">
+      <nav class="top-bar" data-topbar>
+
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="index.html">
+                <span class="title">BrySpark&reg;</span>
+                <small>v1.0.0</small>&nbsp;&nbsp;
+                <span class="white">Style Guide</span>
+              </a>
+            </h1>
+          </li>
+        </ul>
+
+        <!-- Right Nav -->
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li><a href="#"><span class="icon-cogs"></span>User</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><span class="icon-power-off"></span>Logout</a></li>
+            <li class="divider"></li>
+          </ul>
+        </section>
+
+        <section class="top-bar-section">
+          <ul class="left">
+            <li class="divider"></li>
+            <li><a href="poc.html"><span class="icon-ellipsis-h"></span>Proof of Concept</a></li>
+            <li class="divider"></li>
+          </ul>
+        </section>
+
+      </nav>
     </div>
 
-    <div class="row">
-      <div class="large-8 medium-8 columns">
-        <h5>Here&rsquo;s your basic grid:</h5>
-        <!-- Grid Example -->
+    <!-- Typography -->
+    <div class="full-width clearfix vertical-space">
+      <h2>Typography <small>(Nothing fancy here.)</small></h2>
+      <h1><strong>h1.</strong> Salami shank sausage bacon, corned beef leberkas.</h1>
+      <h2><strong>h2.</strong> Biltong bresaola porchetta turkey tail venison.</h2>
+      <h3><strong>h3.</strong> Short loin cillum anim excepteur ham hock eiusmod.</h3>
+      <h4><strong>h4.</strong> Ham pork chop shankle bresaola flank spare ribs.</h4>
+      <h5><strong>h5.</strong> Pork belly labore chuck, consectetur pork ham hock consequat.</h5>
+      <h6><strong>h6.</strong> Mollit shoulder quis sunt sirloin. Elit pork belly aliquip ea.</h6>
+      <p><strong>p.</strong> Bacon ipsum <a href="http://bit.ly/IqT6zt" target="_blank">pork loin <span class="icon-new-tab"></span></a> reprehenderit sunt laborum, consequat et tenderloin aute velit tail brisket pork belly ut occaecat drumstick. </p>
+      <p><small><strong>small.</strong> Bacon ipsum dolor amet pork loin reprehenderit sunt laborum, consequat et tenderloin aute velit tail brisket pork belly ut occaecat drumstick. Sint short loin ut voluptat.</small></p>
+      <hr/>
+    </div>
 
-        <div class="row">
-          <div class="large-12 columns">
-            <div class="callout panel">
-              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>
+    <div class="full-width clearfix">
+
+      <h2>Buttons and Button Groups</h2>
+
+      <div>
+        <h4>Normal Buttons</h4>
+        <a class="button small">Active</a>
+        <a class="button small secondary">Button</a>
+        <a class="button small secondary">Button</a>
+        <a class="button small secondary">Button</a>
+        <a class="button small secondary">Button</a>
+      </div><!-- .-->
+      <div>
+        <a class="button small">Next</a>
+        <a class="button small secondary">Idle</a>
+        <a class="button small warning">Hang On</a>
+        <a class="button small alert">Stop!</a>
+        <a class="button small success">Finish</a>
+      </div><!-- .-->
+
+      <div>
+        <h4>Rounded Normal Buttons</h4>
+        <a class="button small radius">Active</a>
+        <a class="button small secondary radius">Button</a>
+        <a class="button small secondary radius">Button</a>
+        <a class="button small secondary radius">Button</a>
+        <a class="button small secondary radius">Button</a>
+      </div><!-- .-->
+      <div>
+        <a class="button small">Next</a>
+        <a class="button small secondary radius">Idle</a>
+        <a class="button small warning radius">Hang On</a>
+        <a class="button small alert radius">Stop!</a>
+        <a class="button small success radius">Finish</a>
+      </div><!-- .-->
+
+      <div>
+        <h4>Button Groups</h4>
+        <ul class="button-group">
+          <li><a class="button small">Next</a></li>
+          <li><a class="button small secondary">Idle</a></li>
+          <li><a class="button small warning">Hang On</a></li>
+          <li><a class="button small alert">Stop!</a></li>
+          <li><a class="button small success">Finish</a></li>
+        </ul>
+      </div> <!-- .-->
+      <div>
+        <ul class="button-group radius">
+          <li><a class="button small">Next</a></li>
+          <li><a class="button small secondary">Idle</a></li>
+          <li><a class="button small warning">Hang On</a></li>
+          <li><a class="button small alert">Stop!</a></li>
+          <li><a class="button small success">Finish</a></li>
+        </ul>
+      </div> <!-- .-->
+
+      <div>
+        <h4>Normal Buttons w/icons</h4>
+        <a class="button small"><span class="icon-stats-dots"></span>Chart</a>
+        <a class="button small secondary"><span class="icon-table"></span>Table</a>
+        <a class="button small secondary"><span class="icon-download"></span>Export</a>
+        <a class="button small secondary"><span class="icon-search-plus"></span>Zoom</a>
+        <a class="button small secondary"><span class="icon-pushpin"></span>Pin</a>
+        <a class="button small alert"><span class="icon-close"></span>Close</a>
+      </div><!-- .-->
+
+      <div>
+        <h4>Small Buttons</h4>
+        <a class="button tiny">Active</a>
+        <a class="button tiny secondary">Button</a>
+        <a class="button tiny secondary">Button</a>
+        <a class="button tiny secondary">Button</a>
+        <a class="button tiny secondary">Button</a>
+      </div><!-- .-->
+
+      <div>
+        <a class="button tiny">Next</a>
+        <a class="button tiny secondary">Idle</a>
+        <a class="button tiny warning">Hang On</a>
+        <a class="button tiny alert">Stop!</a>
+        <a class="button tiny success">Finish</a>
+      </div><!-- .-->
+
+      <div>
+        <h4>Rounded Small Buttons</h4>
+        <a class="button tiny">Active</a>
+        <a class="button tiny secondary radius">Button</a>
+        <a class="button tiny secondary radius">Button</a>
+        <a class="button tiny secondary radius">Button</a>
+        <a class="button tiny secondary radius">Button</a>
+      </div><!-- .-->
+
+      <div>
+        <a class="button tiny radius">Next</a>
+        <a class="button tiny secondary radius">Idle</a>
+        <a class="button tiny warning radius">Hang On</a>
+        <a class="button tiny alert radius">Stop!</a>
+        <a class="button tiny success radius">Finish</a>
+      </div><!-- .-->
+
+      <div>
+        <h4>Small Button Groups</h4>
+        <ul class="button-group">
+          <li><a class="button tiny">Next</a></li>
+          <li><a class="button tiny secondary">Idle</a></li>
+          <li><a class="button tiny warning">Hang On</a></li>
+          <li><a class="button tiny alert">Stop!</a></li>
+          <li><a class="button tiny success">Finish</a></li>
+        </ul>
+      </div> <!-- .-->
+      <div>
+        <ul class="button-group radius">
+          <li><a class="button tiny">Next</a></li>
+          <li><a class="button tiny secondary">Idle</a></li>
+          <li><a class="button tiny warning">Hang On</a></li>
+          <li><a class="button tiny alert">Stop!</a></li>
+          <li><a class="button tiny success">Finish</a></li>
+        </ul>
+      </div> <!-- .-->
+
+      <div>
+        <h4>Small Buttons w/icons</h4>
+        <a class="button tiny"><span class="icon-stats-dots"></span>Chart</a>
+        <a class="button tiny secondary"><span class="icon-table"></span>Table</a>
+        <a class="button tiny secondary"><span class="icon-download"></span>Export</a>
+        <a class="button tiny secondary"><span class="icon-search-plus"></span>Zoom</a>
+        <a class="button tiny secondary"><span class="icon-pushpin"></span>Pin</a>
+        <a class="button tiny alert"><span class="icon-close"></span>Close</a>
+      </div><!-- .-->
+
+      <hr/>
+
+    </div> <!-- .full-width -->
+
+    <div id="output_0"  class="full-width vertical-space clearfix">
+      <h4>Utility Bar
+        <small>&nbsp;(This is visual only. To see it function, <a href="poc.html">visit</a> the POC page.)</small>
+      </h4>
+      <p>Sub-navigation for various charts with display/ output options</p>
+
+      <nav class="top-bar" data-topbar>
+
+        <ul class="title-area">
+          <li class="name">
+            <h3>
+                <span class="title">Some query parameter or data set here</span>
+            </h3>
+          </li>
+        </ul>
+
+        <!-- Right Nav -->
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="active">
+              <a href="#"><span class="icon-stats-dots"></span>Chart</a>
+            </li>
+            <li>
+              <a href="#"><span class="icon-table"></span>Table</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><span class="icon-download"></span>Export</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><span class="icon-search-plus"></span>Zoom</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><span class="icon-pushpin"></span>Pin</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><span class="icon-angle-up"></span>Hide</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#" class="close"><span class="icon-close"></span>Close</a>
+            </li>
+          </ul>
+        </section>
+
+      </nav>
+      <div class="text-center" style="border: 1px solid #e7e7e7; background-color:white; padding: 2em;">
+        <h5>Show me some really awesome charts and graphs</h5>
+      </div>
+    </div><!-- #output_1 -->
+
+    <div class="full-width clearfix" >
+      <hr/>
+      <h2>Tables</h2>
+      <p>There is nothing sexy about tables (unless they have a horizontal scroll).</p>
+
+      <table role="grid">
+        <thead>
+          <tr>
+            <th>Site</th>
+            <th>Dec 2016</th>
+            <th>Nov 2016</th>
+            <th>Oct 2016</th>
+            <th>Sep 2016</th>
+            <th>Aug 2016</th>
+            <th>Jul 2016</th>
+            <th>Jun 2016</th>
+            <th>May 2016</th>
+            <th>Apr 2016</th>
+            <th>Mar 2016</th>
+            <th>Feb 2016</th>
+            <th>Jan 2016</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lake Anna</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+            <td>456.5 KW</td>
+          </tr>
+          <tr>
+            <td>Richmond</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+            <td>653.7 KW</td>
+          </tr>
+          <tr class="selected">
+            <td>Chicago</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+            <td>945.2 KW</td>
+          </tr>
+          <tr>
+            <td>McLean</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+            <td>258.9 KW</td>
+          </tr>
+          <tr>
+            <td>Denver</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+            <td>426.7 KW</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div><!-- .full-width -->
+
+    <div class="full-width clearfix">
+      <h4>(WIP) Scrollable Table <small>(Horizontal scroll for wide tables)</small></h4>
+      <div class="scroll-table">
+        <table>
+          <thead>
+            <tr>
+              <th style="background-color: #EEE">Site</th>
+              <th>Header1</th>
+              <th>Header2</th>
+              <th>Header3</th>
+              <th>Header4</th>
+              <th>Header5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="odd-row">Lake Anna</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+            </tr>
+            <tr>
+              <td class="even-row">Richmond</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+            </tr>
+            <tr>
+              <td class="odd-row">Chicago</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+            </tr>
+            <tr>
+              <td class="even-row">McLean</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+            </tr>
+            <tr>
+              <td class="odd-row">Denver</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+              <td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td>
+            </tr>
+        </tbody>
+      </table>
+    </div><!-- scroll-table -->
+    </div><!-- full-width -->
+
+    <hr/>
+
+    <div class="full-width clearfix">
+      <h2>Form Elements</h2>
+      <p>Form elements are a necessary evil in most any application.</p>
+    <div>
+
+    <div class="row collapse clearfix">
+      <div class="postfix-radius">
+        <div class="small-11 columns">
+          <input type="text" placeholder=">_">
+        </div>
+        <div class="small-1 columns">
+            <a href="#" class="postfix button success">Run Query</a>
+        </div>
+      </div>
+    </div><!-- .row collapse -->
+
+    <div class="full-width clearfix" style="padding-bottom:70px"> <!-- @TODO fix this later -->
+
+      <div class="row">
+        <div class="small-8">
+          <div class="row">
+            <div class="small-1 columns">
+              <label for="right-label" class="left inline">Label</label>
+            </div>
+            <div class="small-5 end columns">
+              <input type="text" id="right-label" placeholder="Inline Text Input">
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="large-6 medium-6 columns">
-            <div class="callout panel">
-              <p>Six columns</p>
-            </div>
-          </div>
-          <div class="large-6 medium-6 columns">
-            <div class="callout panel">
-              <p>Six columns</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="callout panel">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="callout panel">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="callout panel">
-              <p>Four columns</p>
-            </div>
-          </div>
-        </div>
-        
-        <hr />
-                
-        <h5>We bet you&rsquo;ll need a form somewhere:</h5>
-        <form>
+      </div>
+
+      <div class="row">
+        <div class="small-8">
           <div class="row">
-            <div class="large-12 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-12.columns" />
+            <div class="small-1 columns">
+              <label for="right-label" class="left inline">Select</label>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <div class="row collapse">
-                <label>Input Label</label>
-                <div class="small-9 columns">
-                  <input type="text" placeholder="small-9.columns" />
-                </div>
-                <div class="small-3 columns">
-                  <span class="postfix">.com</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Select Box</label>
+            <div class="small-5 end columns">
               <select>
-                <option value="husker">Husker</option>
-                <option value="starbuck">Starbuck</option>
-                <option value="hotdog">Hot Dog</option>
-                <option value="apollo">Apollo</option>
+                <option value="1">Bacon ipsum dolor</option>
+                <option value="2">Prosciutto bresaola chuck</option>
+                <option value="3">Ground round leberkas pork</option>
+                <option value="4"> Jowl beef ribs filet mignon</option>
               </select>
             </div>
           </div>
-          <div class="row">
-            <div class="large-6 medium-6 columns">
-              <label>Choose Your Favorite</label>
-              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-            </div>
-            <div class="large-6 medium-6 columns">
-              <label>Check these out</label>
-              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Textarea Label</label>
-              <textarea placeholder="small-12.columns"></textarea>
-            </div>
-          </div>
-        </form>
-      </div>     
-
-      <div class="large-4 medium-4 columns">
-        <h5>Try one of these buttons:</h5>
-        <p><a href="#" class="small button">Simple Button</a><br/>
-        <a href="#" class="small radius button">Radius Button</a><br/>
-        <a href="#" class="small round button">Round Button</a><br/>            
-        <a href="#" class="medium success button">Success Btn</a><br/>
-        <a href="#" class="medium alert button">Alert Btn</a><br/>
-        <a href="#" class="medium secondary button">Secondary Btn</a></p>           
-        <div class="panel">
-          <h5>So many components, girl!</h5>
-          <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
-          <a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>          
         </div>
       </div>
+
+
+      <div class="sand">
+        <!--Code for Radio Buttons-->
+        <h4>Custom Radio buttons</h4>
+        <input type="radio" id="rb1" name="rb" value="" checked>
+        <label for="rb1">Oakbrook Terrace, IL</label><br>
+        <input type="radio" id="rb2" name="rb"value="">
+        <label for="rb2">Rochester, NY</label><br>
+        <input type="radio" id="rb3" name="rb" value="">
+        <label for="rb3">Short Pump, VA</label>
+      </div>
+      <div class="sand">  <!--Code for Checkbox-->
+        <h4>Custom Checkboxes</h4>
+        <input type="checkbox" id="cb1" name="cb" value="">
+        <label for="cb1">Oakbrook Terrace, IL</label><br>
+        <input type="checkbox" id="cb2" name="cb"value="" checked>
+        <label for="cb2">Rochester, NY</label><br>
+        <input type="checkbox" id="cb3" name="cb" value="">
+        <label for="cb3">Short Pump, VA</label>
+      </div><!-- Sand -->
     </div>
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <hr/>
+
+    <footer class="sticky-footer clearfix">
+      <div class="row full-width collapse">
+        <div class="small-1 columns"><small>Available Apps</small></div>
+        <div class="small-10 columns">
+          <ul class="inline-list">
+            <li><span class="icon-flash"></span></li>
+            <li><span class="icon-cord"></span></li>
+            <li><span class="icon-hourglass"></span></li>
+            <li><span class="icon-tasks"></span></li>
+            <li><span class="icon-pencil"></span></li>
+
+            <li><span class="icon-file-text2"></span></li>
+            <li><span class="icon-meter"></span></li>
+            <li><span class="icon-sun"></span></li>
+            <li><span class="icon-cogs"></span></li>
+            <li><span class="icon-search-plus"></span></li>
+
+            <li><span class=" database"></span></li>
+            <li><span class="icon-stats-dots"></span></li>
+            <li><span class="icon-radio"></span></li>
+            <li><span class="icon-new-tab"></span></li>
+            <li><span class="icon-download"></span></li>
+
+            <li><span class=" icon-info-circle"></span></li>
+            <li><span class="icon-radio-checked2"></span></li>
+            <li><span class="icon-minus2"></span></li>
+            <li><span class="icon-download"></span></li>
+            <li><span class="icon-table"></span></li>
+          </ul>
+        </div>
+        <div class="small-1 columns text-right">
+          <span class="icon-angle-down disabled"></span>
+          <a id="top" href="javascript:;"><span class="icon-angle-double-up"></span></a>
+        </div>
+      </div>
+
+    </footer>
+
+<!-- CLEAN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- JS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="js/fnd/foundation.min.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript">
+      // Scroll to the top of the page
+      $( "#top").on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+      });
+      $("tbody tr").on('click', function() {
+          $(this).toggleClass('selected').siblings().removeClass('selected');
+      });
+    </script>
+
   </body>
 </html>

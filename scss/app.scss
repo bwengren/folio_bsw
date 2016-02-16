@@ -1,40 +1,45 @@
-@import "settings";
-@import "foundation";
+@import
+	"icons",
+	"settings",
+	"foundation/components/global",
+	"foundation/components/button-groups",
+	"foundation/components/buttons",
+	"foundation/components/forms",
+	"foundation/components/reveal",
+	"foundation/components/tables",
+	"foundation/components/top-bar",
+	"foundation/components/type",
+	"foundation/components/visibility";
 
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switches",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+
+// WIP
+div.scroll-table {
+	width: calc(100% - 203px);
+	overflow-x:scroll;
+	margin-left:203px;
+	overflow-y:visible;
+
+	table {border-left: 0}
+
+	td {
+	    white-space:nowrap;
+	}
+
+	// Delete this
+	.long {letter-spacing:1em; }
+
+	td:nth-of-type(1), th:nth-of-type(1){
+	    position:absolute;
+	    width:200px;
+	    left:0.9375rem;
+	    top:auto;
+	    border: 1px solid white;
+	 }
+}
+.even-row {
+	background-color: #f5f5f5;
+}
+.odd-row {
+	background-color: #fff;
+}
+
