@@ -1,0 +1,282 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proof of Concept by Bryan Wengren</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/modernizr.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="topnav clearfix">
+
+      <h1 class="app-name left">MonkeyBread
+        <small>&nbsp;v 1.0.0</small>
+        <span class="light">&nbsp;Dashboard</span>
+      </h1>
+
+      <section class="right">
+        <ul>
+          <li>
+            <a href="javascript:;"  data-reveal-id="user_settings">
+              <span class="icon-cogs"></span>John Smith
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="logout">
+              <span class="icon-power-off"></span>Logout
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="menu hide">
+              <span class="icon-ellipsis-v"></span>Menu
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="left show-for-medium-up">
+        <ul>
+          <li><a href="javascript:;" class="active">Active 1</a></li>
+          <li><a href="javascript:;">Item 2</a></li>
+          <li><a href="javascript:;">Item 3</a></li>
+          <li><a href="javascript:;">Item 4</a></li>
+        </ul>
+      </section>
+
+    </nav>
+
+    <!-- Main navigation modals here +++++++++++++++++++++++++++++ -->
+    <!-- User Settings -->
+    <div id="user_settings" class="reveal-modal small" data-reveal aria-labelledby="User Settings" aria-hidden="true" role="dialog">
+      <h3 id="modalTitle">Account Settings</h3>
+      <p>Update the account setting for John Smith</p>
+      <hr/>
+
+      <form>
+
+        <div class="row clearfix current_password">
+          <div class="small-3 columns">
+            <label for="current_pass" class="inline">Current Password</label>
+          </div>
+          <div class="small-9 columns">
+            <!-- Lets do the posfix here -->
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input id="current_pass" type="password" value="ABCD123456">
+              </div>
+              <div class="small-2 columns">
+                <a id="toggle_current_pass" ref="javascript:;" class="button secondary postfix">Show</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- .current_passwprd -->
+
+        <div class="row clearfix new_password">
+          <div class="small-3 columns">
+            <label for="new_pass" class="inline">New Password</label>
+          </div>
+          <div class="small-9 columns">
+            <!-- Lets do the posfix here -->
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input id="new_pass" type="text" value="">
+              </div>
+              <div class="small-2 columns">
+                <a id="toggle_new_pass" href="javascript:;" class="button secondary postfix">Hide</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- .new_password -->
+
+        <!-- Password rules -->
+        <div class="row clearfix password_rules">
+          <div class="small-9 columns small-offset-3">
+            <ul class="no-bullet">
+              <li>
+                <span id="field_not_blank" class="icon-checkmark success-icon"></span>
+                <small>Leave blank to keep your current password</small>
+              </li>
+              <li>
+                <span id="field_length" class="icon-checkmark2 idle-icon"></span>
+                <small>Must be at least 6 characters long</small>
+              </li>
+              <li>
+                <span id="field_has_num" class="icon-checkmark2 idle-icon"></span>
+                <small>Must contain at least one number</small>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- .password_rules -->
+
+        <!-- Locale -->
+        <div class="row clearfix locale">
+          <div class="small-3 columns">
+            <label for="locale" class="inline">Locale</label>
+          </div>
+          <div class="small-9 columns">
+            <select id="locale">
+              <option value="en-US">en-US</option>
+              <option value="en">en</option>
+              <option value="ja">ja</option>
+            </select>
+          </div>
+        </div>
+
+        <hr/>
+        <div class="text-center account-modal">
+          <a href="javascript:;" class="button small secondary">Cancel</a>
+          <a href="javascript:;" class="button small success ">Update</a>
+        </div>
+
+      </form>
+
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div><!-- #user-settings -->
+
+    <div class="container clearfix">
+
+      <aside class="sidebar-toggle">
+
+        <nav>
+          <div class="clearfix">
+            <h6 class="title  menu">Filter By:
+              <a href="javascript:;" class="right" title="Filter Options">
+                <span class="icon-ellipsis-h"></span>
+              </a>
+            </h6>
+          </div>
+          <div id="filters">
+            <h6 class="title section-title">Date Range</h6>
+            <ul>
+              <li><a href="javascript:;" class="active">Today</a></li>
+              <li><a href="javascript:;">Yesterday</a></li>
+              <li><a href="javascript:;">Custom Date</a></li>
+            </ul>
+            <h6 class="title section-title">View As</h6>
+            <ul>
+              <li><a href="javascript:;">Some options</a></li>
+              <li><a href="javascript:;">Some options</a></li>
+              <li><a href="javascript:;">Some options</a></li>
+            </ul>
+            <h6 class="title section-title">Export As</h6>
+            <ul>
+              <li><a href="javascript:;">Some options</a></li>
+              <li><a href="javascript:;">Some options</a></li>
+              <li><a href="javascript:;">Some options</a></li>
+            </ul>
+            <h6 class="title section-title">Some Filter</h6>
+            <ul>
+              <li><a href="javascript:;">Some options</a></li>
+              <li><a href="javascript:;">Some options</a></li>
+              <li><a href="javascript:;">Some options</a></li>
+            </ul>
+
+          </div><!-- filters -->
+        </nav><!-- navigation -->
+
+      </aside>
+
+      <main>
+
+        <section class="hide">
+          <h5 class="text-center">
+          Define filters • By Default</span> •
+            <span class="normal-weight">And highlight</span> • What isn't selected
+          </h5>
+          <hr/>
+        </section>
+        <section>
+          <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+            <li>
+              <div class="panel">
+                <h5>Dashboard item</h5>
+                <hr/>
+                <img src="img/donut-chart.png">
+                <p><small>Praesent convallis non magna vitae tincidunt. Donec iaculis commodo felis id congue. Mauris vitae pellentesque lacus! Vivamus eget diam at mi euismod ornare ut non felis. </small></p>
+              </div>
+            </li>
+            <li>
+              <div class="panel">
+                <h5>Dashboard item</h5>
+                <hr/>
+                <img src="http://cameronism.com/d3/img/1346410.jpg">
+                <p><small>Praesent convallis non magna vitae tincidunt. Donec iaculis commodo felis id congue. Mauris vitae pellentesque lacus! Vivamus eget diam at mi euismod ornare ut non felis. </small></p>
+              </div>
+            </li>
+            <li>
+              <div class="panel">
+                <h5>Dashboard item</h5>
+                <hr/>
+                <img src="http://orm-chimera-prod.s3.amazonaws.com/1230000000345/images/idvw_1103.png">
+                <p><small>Praesent convallis non magna vitae tincidunt. Donec iaculis commodo felis id congue. Mauris vitae pellentesque lacus! Vivamus eget diam at mi euismod ornare ut non felis. </small></p>
+              </div>
+            </li>
+            <li>
+              <div class="panel">
+                <h5>Dashboard item</h5>
+                <hr/>
+                <img src="http://cameronism.com/d3/img/1346410.jpg">
+                <p><small>Praesent convallis non magna vitae tincidunt. Donec iaculis commodo felis id congue. Mauris vitae pellentesque lacus! Vivamus eget diam at mi euismod ornare ut non felis. </small></p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
+            <li>
+              <div class="panel">
+                <h5>Dashboard item
+                </h5>
+                <hr/>
+                <img src="img/bar_chart_2.png">
+                <p><small>Praesent convallis non magna vitae tincidunt. Donec iaculis commodo felis id congue. Mauris vitae pellentesque lacus! Vivamus eget diam at mi euismod ornare ut non felis. </small></p>
+              </div>
+            </li>
+            <li>
+              <div class="panel">
+                <h5>Dashboard item</h5>
+                <hr/>
+                <img src="img/bar_chart_3.png">
+                <p><small>Praesent convallis non magna vitae tincidunt. Donec iaculis commodo felis id congue. Mauris vitae pellentesque lacus! Vivamus eget diam at mi euismod ornare ut non felis. </small></p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </main><!-- main -->
+
+    </div><!-- container -->
+
+<!-- JS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="js/fnd/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript">
+
+      //show / hide sidebar
+      var aside = document.getElementsByTagName("aside")[0];
+      var menu =document.getElementsByClassName("menu");
+      var filters = document.getElementById("filters");
+
+      function toggleNav () {
+        aside.classList.toggle("sidebar-toggle");
+        filters.classList.toggle("hide");
+      }
+
+      setTimeout(toggleNav, 3000);
+
+      $(menu).on('click', function() {
+          toggleNav();
+      });
+
+
+    </script>
+
+  </body>
+
+</html>

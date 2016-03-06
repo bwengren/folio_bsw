@@ -4,24 +4,32 @@
 
 @font-face {
     font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Regular.woff2') format('woff2');
+    src: url('fonts/SourceSansPro-Regular.woff') format('woff');
     src: url('fonts/SourceSansPro-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Light.woff2') format('woff2');
+    src: url('fonts/SourceSansPro-Light.woff') format('woff');
     src: url('fonts/SourceSansPro-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Semibold.woff2') format('woff2');
+    src: url('fonts/SourceSansPro-Semibold.woff') format('woff');
     src: url('fonts/SourceSansPro-Semibold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Semibold.woff2') format('woff2');
+    src: url('fonts/SourceSansPro-Semibold.woff') format('woff');
     src: url('fonts/SourceSansPro-Semibold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
@@ -71,6 +79,15 @@ $body-bg: #f9f9f9;
 $row-width: 100%;
 $column-gutter: rem-calc(30);
 $total-columns: 12 ;
+
+// Here we define the breakpoints which will become the upper border for each media size.
+// The function em-calc() calculates the em-value from a px-value.
+// $small-breakpoint:  em-calc(640)  !default;
+// $medium-breakpoint: em-calc(1024) !default;
+// $large-breakpoint:  em-calc(1440) !default;
+// $xlarge-breakpoint: em-calc(1920) !default;
+
+$panel-bg: white !default;
 
 // Footer
 
@@ -141,10 +158,13 @@ $topbar-title-weight: 300;
 		font-weight: 700;
 	}
 	.label {
-		font-weight: 300;
+		font-weight: 700;
 	}
 	small {color:$secondary-color;}
 }
+
+.top-bar .title-area .right {float: right;}
+
 .top-bar-section li.active:not(.has-form) a:not(.button) {
 	font-weight: 400;
 }

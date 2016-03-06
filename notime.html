@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bryan Wengren, having fun</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+
+    .container {
+      display: flex;
+      align-items: center;
+      height:30em;
+      justify-content: center;
+    }
+
+    .flex-item {
+      flex: 1 1 auto;
+      max-width: 50%;
+    }
+
+    html, body {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    h1 {
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+
+    hr {
+      border: solid #DDDDDD;
+      border-width: 1px 0 0;
+      clear: both;
+      height: 0;
+      margin: 1.25rem 0 1.1875rem;
+    }
+
+    button, a {
+      background-color: #5CB7D1;
+      font-weight: 400;
+      color: white;
+      padding:1.2rem;
+      border:none;
+      border-radius: .25rem;
+      text-decoration: none;
+      font-size: .875rem;
+      cursor: pointer;
+    }
+
+    .text-center {text-align: center;}
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="flex-item">
+        <h1 class="text-center">We should hire Bryan Wengren because ...</h1>
+        <p id="thisReason" class="text-center">
+          He'd be an asset to the overall (and continued) product development cycle
+        </p>
+        <hr/>
+        <div class="text-center">
+          <button id="thisButton" onclick='clickMe()'>and because ...</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+      function showReasons(resultsObj) {
+        clickMe = function() {
+          var because = resultsObj[Math.floor(Math.random() * resultsObj.length)];
+          //console.log(because.detail);
+          document.getElementById("thisReason").innerHTML = because.detail;
+        };
+      }
+
+      var request = new XMLHttpRequest();
+      request.open('GET', 'notime_reasons.json', true);
+      request.onload = function() {
+        if (this.status >= 200 && this.status < 400) {
+          var results = JSON.parse(this.response);
+          showReasons(results);
+        } else {
+          document.getElementById("thisReason").innerHTML = "Hamster died.";
+        }
+      };
+      request.onerror = function() {
+        document.getElementById("thisReason").innerHTML = "Internet died.";
+      };
+
+      request.send();
+
+
+
+    </script>
+
+  </body>
+
+</html>

@@ -1,6 +1,7 @@
 @import
 	"icons",
 	"settings",
+	"navigation",
 	"foundation/components/global",
 	"foundation/components/button-groups",
 	"foundation/components/buttons",
@@ -9,8 +10,14 @@
 	"foundation/components/tables",
 	"foundation/components/top-bar",
 	"foundation/components/type",
-	"foundation/components/visibility";
+	"foundation/components/visibility",
+	"foundation/components/panels",
+	"foundation/components/block-grid";
 
+*:focus {
+	border: none;
+	outline: none;
+}
 
 // WIP
 div.scroll-table {
